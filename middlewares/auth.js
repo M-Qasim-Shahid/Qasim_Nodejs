@@ -11,12 +11,11 @@ if(!token) return res.status(400).send("Token Not Provided");
 try {
 let user = jwt.verify(token,config.get("jwtPrivateKey")); 
 req.user =await UserModel.findById(user._id);
-} catch(err){
-    return res.status(401).send("Invalid Token");
-
+} 
+catch(err){
+return res.status(401).send("Invalid Token");
 }
 next();
-
 };
 
 module.exports= auth;

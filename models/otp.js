@@ -12,13 +12,8 @@ var otpSchema= mongoose.Schema({
 email: String ,
 code: String ,
 expireIn: Number,
-
-
-},{
-    timestamps:true
+},
+{   timestamps:true
 });
-
-
-
 let otp = mongoose.model("OTP",otpSchema,"OTP");
 module.exports= otp;
